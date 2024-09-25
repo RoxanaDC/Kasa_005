@@ -1,0 +1,69 @@
+// Variables pour les couleurs, tailles et espacements
+$primary-color: #ff6060;
+$font-size-large: 36px;
+$font-size-medium: 18px;
+$font-size-small: 14px;
+$gap-large: 50px;
+$gap-medium: 20px;
+$gap-small: 10px;
+$margin-top-default: 20px;
+// Mixin pour la police des titres
+@mixin title-style($size, $margin-bottom) {
+  font-size: $size;
+  font-weight: 500;
+  color: $primary-color;
+  margin-bottom: $margin-bottom;
+}
+// Mixin pour le flex container
+@mixin flex-container($justify: flex-start, $align: stretch, $gap: $gap-large) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  margin-top: $margin-top-default;
+}
+// Styles pour logement
+.logement {
+  &__title {
+    @include title-style($font-size-large, $gap-small);
+  }
+  &__location {
+    font-size: $font-size-medium;
+    color: $primary-color;
+    font-weight: 500;
+    margin-bottom: $gap-medium;
+  }
+}
+// Flex containers
+.flex {
+  @include flex-container(null, null, $gap-large);
+}
+.flex-between {
+  @include flex-container(space-between, null, $gap-medium);
+}
+@media (max-width: 768px) {
+  // Flex containers adaptés pour petits écrans
+  .flex {
+    flex-wrap: wrap;
+    gap: $gap-medium;
+  }
+  .flex-between {
+    flex-wrap: wrap;
+  }
+  .flex-reverse {
+    @include flex-container(space-between, null, $gap-small);
+    flex-direction: row-reverse;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+  // Adaptation des styles pour logement
+  .logement {
+    &__title {
+      @include title-style($font-size-medium, $gap-small);
+    }
+    &__location {
+      font-size: $font-size-small;
+      margin-bottom: $gap-small;
+    }
+  }
+}

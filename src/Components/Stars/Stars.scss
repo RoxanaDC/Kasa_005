@@ -1,0 +1,24 @@
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  @media (max-width: 768px) {
+    gap: 7px;
+  }
+}
+
+.star {
+  color: #ff6060;
+
+  &--empty {
+    color: #e8e8e8;
+  }
+
+  &__icone {
+    @media (max-width: 768px) {
+      width: 13px;
+      height: 13px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.home {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    background: #f7f7f7;
+    border-radius: 25px;
+    padding: 50px;
+    margin-top: 50px;
+  }
+}
+
+.card {
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  background-color: #ff6060;
+  border-radius: 10px;
+}
+
+@media (max-width: 1050px) {
+  .home {
+    &__container {
+      gap: 20px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  }
+
+  .card {
+    flex-basis: calc(50% - 50px);
+    min-height: 255px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    &__container {
+      background-color: transparent;
+      padding: 0px;
+    }
+  }
+
+  .card {
+    flex-basis: calc(100% - 50px);
+  }
+}

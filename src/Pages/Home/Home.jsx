@@ -3,7 +3,7 @@ import Banner from "./../../Components/Banner/Banner";
 import Card from "./../../Components/Card/Card";
 import HomeData from "../../Data/dataLogement.json";
 
-import "./Home.css";
+import "./Home.scss";
 
 function Home() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Host.css";
+import "./Host.scss";
 
 function Host({ name, picture }) {
   const words = name.split(" ");

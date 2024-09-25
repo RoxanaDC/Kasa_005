@@ -1,0 +1,143 @@
+/*=============================================
+=            Dropdown - General            =
+=============================================*/
+.dropdown {
+  display: flex;
+  flex-direction: column;
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0 solid black;
+    padding-left: 20px;
+    padding-right: 10px;
+    background: #ff6060;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    line-height: 142.6%;
+    height: 50px;
+    border-radius: 10px;
+
+    &__arrow {
+      margin-left: 10px;
+      transition: all 0.5s;
+      cursor: pointer;
+
+      &--close {
+        opacity: 0.5;
+      }
+    }
+
+    &:hover {
+      &__arrow--close {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    margin-top: -10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    z-index: -1;
+    height: 0;
+    opacity: 0;
+    transition: all 1s;
+
+    &--open {
+      height: auto;
+      opacity: 1;
+    }
+
+    &__item {
+      padding-left: 20px;
+      padding-right: 20px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 142.6%;
+      color: #000000;
+    }
+  }
+
+  &__button__arrow--open {
+    transform: rotate(180deg);
+  }
+}
+
+/* Media Queries */
+@media all and (min-width: 0px) and (max-width: 768px) {
+  .dropdown {
+    &__list__item {
+      font-weight: 400;
+      font-size: 12px;
+    }
+  }
+}
+
+/*=============================================
+=            Dropdown - About Page            =
+=============================================*/
+.dropdown__button--about {
+  font-size: 24px;
+
+  &__arrow--about {
+    width: 24px;
+  }
+
+  &__list__item--about {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 768px) {
+  .dropdown__button--about {
+    font-size: 14px;
+    height: 30px;
+    border-radius: 5px;
+
+    &__arrow--about {
+      width: 16px;
+    }
+  }
+
+  .dropdown__list__item--about {
+    font-size: 12px;
+  }
+}
+
+/*=============================================
+=            Dropdown - Logement Page        =
+=============================================*/
+.dropdown__button--logement {
+  font-size: 18px;
+
+  &__arrow--logement {
+    width: 18px;
+  }
+
+  &__list__item--logement {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 768px) {
+  .dropdown__button--logement {
+    font-size: 13px;
+    height: 30px;
+    border-radius: 5px;
+
+    &__arrow--logement {
+      width: 14px;
+    }
+  }
+
+  .dropdown__list__item--logement {
+    font-size: 12px;
+  }
+}

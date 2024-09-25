@@ -1,0 +1,42 @@
+.error {
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    font-weight: 700;
+    font-size: 288px;
+    text-align: center;
+    color: #ff6060;
+  }
+
+  &__paragraph {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 142.6%;
+    text-align: center;
+    color: #ff6060;
+    padding-bottom: 50px;
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 142.6%;
+    text-align: center;
+    color: #ff6060;
+    padding-bottom: 50px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 768px) {
+  .error {
+    &__heading {
+      font-size: 96px;
+    }
+    &__paragraph {
+      font-size: 18px;
+    }
+    &__link {
+      font-size: 14px;
+    }
+  }
+}

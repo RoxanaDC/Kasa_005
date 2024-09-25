@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Dropdown.css";
+import "./Dropdown.scss";
 
 function Dropdown(props) {
   // Utiliser un état pour gérer l'ouverture/fermeture du menu déroulant

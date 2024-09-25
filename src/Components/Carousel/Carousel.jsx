@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./Carousel.css";
+import "./Carousel.scss";
 
 function Carousel({ photos }) {
   const [index, setIndex] = useState(0);

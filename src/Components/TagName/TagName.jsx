@@ -1,4 +1,4 @@
-import "./TagName.css";
+import "./TagName.scss";
 import React from "react";
 
 function TagName(props) {
