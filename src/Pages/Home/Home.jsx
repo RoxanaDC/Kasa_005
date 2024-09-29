@@ -5,24 +5,15 @@ import HomeData from "../../Data/dataLogement.json";
 
 import "./Home.scss";
 
-function Home() {
-  return (
-    <main className="home">
-      <Banner txt="Chez vous, partout et ailleurs" page="home" />
-      <section className="home__container">
-        {HomeData.map((homeData) => {
-          return (
-            <Card
-              className="card"
-              key={homeData.id}
-              id={homeData.id}
-              title={homeData.title}
-              cover={homeData.cover}
-            />
-          );
-        })}
-      </section>
-    </main>
-  );
-}
+const Home = () => (
+  <main className="home">
+    <Banner txt="Chez vous, partout et ailleurs" page="home" />
+    <section className="home__container">
+      {HomeData.map(({ id, title, cover }) => (
+        <Card className="card" key={id} id={id} title={title} cover={cover} />
+      ))}
+    </section>
+  </main>
+);
+
 export default Home;

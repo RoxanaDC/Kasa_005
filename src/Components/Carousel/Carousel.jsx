@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
-
 import "./Carousel.scss";
 
-function Carousel({ photos }) {
+const Carousel = ({ photos }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     if (photos.length > 1) {
-      const interval = setInterval(nextSlide, 5000);
+      const interval = setInterval(
+        () => setIndex((prevIndex) => (prevIndex + 1) % photos.length),
+        5000
+      );
       return () => clearInterval(interval);
     }
-  }, [index]);
+  }, [photos.length]);
 
-  function nextSlide() {
-    setIndex((index + 1) % photos.length);
-  }
-
-  function prevSlide() {
-    setIndex((index - 1 + photos.length) % photos.length);
-  }
+  const nextSlide = () => setIndex((index + 1) % photos.length);
+  const prevSlide = () => setIndex((index - 1 + photos.length) % photos.length);
 
   return (
     <section className="carousel">
@@ -33,13 +30,13 @@ function Carousel({ photos }) {
             className="carousel__button carousel__button--prev"
             onClick={prevSlide}
           >
-            <img src="/icone_carousel_prev.svg" alt="icone_carousel_prev" />
+            <img src="/carousel_arrow_prev.svg" alt="Previous" />
           </button>
           <button
             className="carousel__button carousel__button--next"
             onClick={nextSlide}
           >
-            <img src="/icone_carousel_next.svg" alt="icone_carousel_next" />
+            <img src="/carousel_arrow_next.svg" alt="Next" />
           </button>
           <p className="carousel__counter">
             {index + 1} / {photos.length}
@@ -48,6 +45,6 @@ function Carousel({ photos }) {
       )}
     </section>
   );
-}
+};
 
 export default Carousel;

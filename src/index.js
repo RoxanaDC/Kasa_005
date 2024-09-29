@@ -4,9 +4,13 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-
+// selectioner l'element avec l'id=root dans le fishier index.html
 const root = ReactDOM.createRoot(document.getElementById("root"));
+//afisher l'app React dans l'element du DOM "root"
 root.render(
+  // BrowserRouter permets la navigation entre les pages
+  // React.StrictMode pour identifier les problemes de performance
+  // et pour offrir des alerts pendant le developement
   <BrowserRouter>
     <React.StrictMode>
       <App />

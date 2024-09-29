@@ -1,3 +1,4 @@
+$primary_color: white;
 .carousel {
   position: relative;
   margin: 0 auto;
@@ -19,7 +20,7 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
+    color: $primary_color;
     font-size: 18px;
     z-index: 1000;
   }
@@ -31,7 +32,7 @@
     background-color: transparent;
     border: none;
     font-size: 2rem;
-    color: white;
+    color: $primary_color;
     transition: all 0.3s;
     opacity: 0.5;
     cursor: pointer;

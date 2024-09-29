@@ -9,7 +9,7 @@ function Stars({ rating }) {
         <span className="star star--full" key={i}>
           <img
             className="star__icone"
-            src="/icone_rating.svg"
+            src="/star-active.png"
             alt="icone_rating"
           />
         </span>
@@ -19,7 +19,7 @@ function Stars({ rating }) {
         <span className="star star--empty" key={i}>
           <img
             className="star__icone"
-            src="/icone_rating_empty.svg"
+            src="/star-inactive.png"
             alt="icone_rating"
           />
         </span>

@@ -1,14 +1,12 @@
 import React from "react";
 import "./Banner.scss";
 
-function Banner({ page, txt }) {
-  return (
-    <section className={"banner banner--mobile banner--" + page}>
-      <div>
-        <span className="banner__txt">{txt}</span>
-      </div>
-    </section>
-  );
-}
+const Banner = ({ page, txt }) => (
+  <div className={`banner banner--mobile banner--${page}`}>
+    <div>
+      <span className="banner__text">{txt}</span>
+    </div>
+  </div>
+);
 
 export default Banner;

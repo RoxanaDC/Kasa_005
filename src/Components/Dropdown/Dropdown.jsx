@@ -1,56 +1,46 @@
 import React, { useState } from "react";
 import "./Dropdown.scss";
 
-function Dropdown(props) {
-  // Utiliser un état pour gérer l'ouverture/fermeture du menu déroulant
+const Dropdown = ({ title, content, page }) => {
   const [open, setOpen] = useState(false);
 
-  // Créer une fonction pour basculer l'état du menu déroulant
-  function toggleDropdown() {
-    setOpen((prevOpen) => !prevOpen);
-  }
+  const toggleDropdown = () => setOpen((prevOpen) => !prevOpen);
 
   return (
     <div className="dropdown">
       <div
-        className={"dropdown__button dropdown__button--" + props.page}
+        className={`dropdown__button dropdown__button--${page}`}
         onClick={toggleDropdown}
       >
-        {props.title}
+        {title}
         <img
-          className={`dropdown__button__arrow dropdown__button__arrow--${
-            props.page
-          } dropdown__button__arrow--${open ? "open" : "close"}`}
-          src="/icone_dropdown.svg"
-          alt="icone_dropdown"
+          className={`dropdown__button__arrow dropdown__button__arrow--${page} dropdown__button__arrow--${
+            open ? "open" : "close"
+          }`}
+          src="/arrow_down.png"
+          alt="Dropdown icon"
         />
       </div>
       <ul
         className={`dropdown__list dropdown__list--${open ? "open" : "close"}`}
       >
-        {Array.isArray(props.content) ? (
-          props.content.map((item, index) => (
+        {Array.isArray(content) ? (
+          content.map((item, index) => (
             <li
-              className={
-                "dropdown__list__item dropdown__list__item--" + props.page
-              }
+              className={`dropdown__list__item dropdown__list__item--${page}`}
               key={index}
             >
               {item}
             </li>
           ))
         ) : (
-          <li
-            className={
-              "dropdown__list__item dropdown__list__item--" + props.page
-            }
-          >
-            {props.content}
+          <li className={`dropdown__list__item dropdown__list__item--${page}`}>
+            {content}
           </li>
         )}
       </ul>
     </div>
   );
-}
+};
 
 export default Dropdown;

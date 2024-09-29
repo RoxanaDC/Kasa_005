@@ -1,10 +1,8 @@
 import React from "react";
 import "./Host.scss";
 
-function Host({ name, picture }) {
-  const words = name.split(" ");
-  const firstName = words[0];
-  const lastName = words[words.length - 1];
+const Host = ({ name, picture }) => {
+  const [firstName, lastName] = name.split(" ");
 
   return (
     <div className="host">
@@ -15,6 +13,6 @@ function Host({ name, picture }) {
       <img src={picture} alt={name} className="host__picture" />
     </div>
   );
-}
+};
 
 export default Host;

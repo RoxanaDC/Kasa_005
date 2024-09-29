@@ -2,34 +2,23 @@ import React from "react";
 import "./Header.scss";
 import { NavLink } from "react-router-dom";
 
-function Header() {
-  return (
-    <header className="header">
-      <img className="header__logo" src="./logo.png" alt="Logo" />
-      <nav className="header__navbar">
+const Header = () => (
+  <header className="header">
+    <img className="header__logo" src="../logo.svg" alt="Logo_Kasa" />
+    <nav className="header__navbar">
+      {["/", "/about"].map((path, index) => (
         <NavLink
-          className={(state) =>
-            state.isActive
-              ? "header__navbar__link active"
-              : "header__navbar__link"
+          key={index}
+          className={({ isActive }) =>
+            `header__navbar__link${isActive ? " active" : ""}`
           }
-          to="/"
+          to={path}
         >
-          Accueil
+          {path === "/" ? "Accueil" : "A propos"}
         </NavLink>
-        <NavLink
-          className={(state) =>
-            state.isActive
-              ? "header__navbar__link active"
-              : "header__navbar__link"
-          }
-          to="/about"
-        >
-          A propos
-        </NavLink>
-      </nav>
-    </header>
-  );
-}
+      ))}
+    </nav>
+  </header>
+);
 
 export default Header;

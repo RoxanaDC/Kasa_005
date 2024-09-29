@@ -1,10 +1,11 @@
+$primary_color: white;
 .card {
   display: flex;
   flex: 1 0 calc(33.33% - 50px);
   min-height: 340px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   align-items: end;
-  color: white;
+  color: $primary_color;
   text-decoration: none;
   position: relative;
   transition: all 0.2s;
@@ -23,9 +24,9 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 142.6%;
-    color: white;
+    color: $primary_color;
     text-shadow: none;
-    text-decoration-color: white;
+    text-decoration-color: $primary_color;
     position: absolute;
     bottom: 0;
     left: 0;
