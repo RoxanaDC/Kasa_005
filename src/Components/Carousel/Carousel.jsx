@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Carousel.scss";
-
 const Carousel = ({ photos }) => {
   const [index, setIndex] = useState(0);
 
@@ -8,7 +7,7 @@ const Carousel = ({ photos }) => {
     if (photos.length > 1) {
       const interval = setInterval(
         () => setIndex((prevIndex) => (prevIndex + 1) % photos.length),
-        5000
+        3500
       );
       return () => clearInterval(interval);
     }
@@ -16,7 +15,6 @@ const Carousel = ({ photos }) => {
 
   const nextSlide = () => setIndex((index + 1) % photos.length);
   const prevSlide = () => setIndex((index - 1 + photos.length) % photos.length);
-
   return (
     <section className="carousel">
       <img
@@ -46,5 +44,4 @@ const Carousel = ({ photos }) => {
     </section>
   );
 };
-
 export default Carousel;

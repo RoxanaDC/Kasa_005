@@ -3,8 +3,7 @@ import "./Dropdown.scss";
 
 const Dropdown = ({ title, content, page }) => {
   const [open, setOpen] = useState(false);
-
-  const toggleDropdown = () => setOpen((prevOpen) => !prevOpen);
+  const toggleDropdown = () => setOpen(!open);
 
   return (
     <div className="dropdown">
@@ -24,23 +23,16 @@ const Dropdown = ({ title, content, page }) => {
       <ul
         className={`dropdown__list dropdown__list--${open ? "open" : "close"}`}
       >
-        {Array.isArray(content) ? (
-          content.map((item, index) => (
-            <li
-              className={`dropdown__list__item dropdown__list__item--${page}`}
-              key={index}
-            >
-              {item}
-            </li>
-          ))
-        ) : (
-          <li className={`dropdown__list__item dropdown__list__item--${page}`}>
-            {content}
+        {(Array.isArray(content) ? content : [content]).map((item, index) => (
+          <li
+            className={`dropdown__list__item dropdown__list__item--${page}`}
+            key={index}
+          >
+            {item}
           </li>
-        )}
+        ))}
       </ul>
     </div>
   );
 };
-
 export default Dropdown;
