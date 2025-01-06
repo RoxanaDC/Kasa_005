@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./Carousel.scss";
+import React, { useState, useEffect } from 'react';
+import './Carousel.scss';
 const Carousel = ({ photos }) => {
   const [index, setIndex] = useState(0);
 
@@ -16,27 +16,33 @@ const Carousel = ({ photos }) => {
   const nextSlide = () => setIndex((index + 1) % photos.length);
   const prevSlide = () => setIndex((index - 1 + photos.length) % photos.length);
   return (
-    <section className="carousel">
+    <section className='carousel'>
       <img
-        className="carousel__img"
+        className='carousel__img'
         src={photos[index]}
         alt={`Photo ${index + 1} du logement`}
       />
       {photos.length > 1 && (
         <>
           <button
-            className="carousel__button carousel__button--prev"
+            className='carousel__button carousel__button--prev'
             onClick={prevSlide}
           >
-            <img src="/carousel_arrow_prev.svg" alt="Previous" />
+            <img
+              src={`${process.env.PUBLIC_URL}/carousel_arrow_prev.svg`}
+              alt='Previous'
+            />
           </button>
           <button
-            className="carousel__button carousel__button--next"
+            className='carousel__button carousel__button--next'
             onClick={nextSlide}
           >
-            <img src="/carousel_arrow_next.svg" alt="Next" />
+            <img
+              src={`${process.env.PUBLIC_URL}/carousel_arrow_next.svg`}
+              alt='Next'
+            />
           </button>
-          <p className="carousel__counter">
+          <p className='carousel__counter'>
             {index + 1} / {photos.length}
           </p>
         </>
