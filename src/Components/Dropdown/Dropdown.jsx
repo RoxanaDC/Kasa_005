@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import "./Dropdown.scss";
+import React, { useState } from 'react';
+import './Dropdown.scss';
 
 const Dropdown = ({ title, content, page }) => {
   const [open, setOpen] = useState(false);
   const toggleDropdown = () => setOpen(!open);
 
   return (
-    <div className="dropdown">
+    <div className='dropdown'>
       <div
         className={`dropdown__button dropdown__button--${page}`}
         onClick={toggleDropdown}
@@ -14,14 +14,14 @@ const Dropdown = ({ title, content, page }) => {
         {title}
         <img
           className={`dropdown__button__arrow dropdown__button__arrow--${page} dropdown__button__arrow--${
-            open ? "open" : "close"
+            open ? 'open' : 'close'
           }`}
-          src="/arrow_down.png"
-          alt="Dropdown icon"
+          src={`${process.env.PUBLIC_URL}/arrow_down.png`}
+          alt='Dropdown icon'
         />
       </div>
       <ul
-        className={`dropdown__list dropdown__list--${open ? "open" : "close"}`}
+        className={`dropdown__list dropdown__list--${open ? 'open' : 'close'}`}
       >
         {(Array.isArray(content) ? content : [content]).map((item, index) => (
           <li
