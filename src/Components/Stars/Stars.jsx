@@ -7,13 +7,21 @@ function Stars({ rating }) {
     if (i <= rating) {
       stars.push(
         <span className='star star--full' key={i}>
-          <img className='star__icone' src='/star-active.png' alt='⁎' />
+          <img
+            className='star__icone'
+            src={`${process.env.PUBLIC_URL}/star-active.png`}
+            alt='⁎'
+          />
         </span>
       );
     } else {
       stars.push(
         <span className='star star--empty' key={i}>
-          <img className='star__icone' src='/star-inactive.png' alt='*' />
+          <img
+            className='star__icone'
+            src={`${process.env.PUBLIC_URL}/star-inactive.png`}
+            alt='*'
+          />
         </span>
       );
     }
