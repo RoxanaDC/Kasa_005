@@ -4,7 +4,12 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => (
   <header className='header'>
-    <img className='header__logo' src='../logo.png' alt='Logo_Kasa' />
+    <img
+      className='header__logo'
+      src={`${process.env.PUBLIC_URL}/logo.png`}
+      alt='logo_kasa'
+    />
+
     <nav className='header__navbar'>
       {['/', '/about'].map((path, index) => (
         <NavLink
