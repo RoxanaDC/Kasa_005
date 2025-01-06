@@ -1,21 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.scss";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.scss';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { HashRouter } from 'react-router-dom';
 // selectioner l'element avec l'id=root dans le fishier index.html
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 //afisher l'app React dans l'element du DOM "root"
 root.render(
-  // BrowserRouter permets la navigation entre les pages
+  // HashRouter remplace BrowserRouter, qui permets la navigation entre les pages
   // React.StrictMode pour identifier les problemes de performance
   // et pour offrir des alerts pendant le developement
-  <BrowserRouter>
+  <HashRouter>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
